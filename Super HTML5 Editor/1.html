@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>基本地图展示</title>
+
+</head>
+<body>
+<input type="button">
+<iframe></iframe>
+<script>
+var iframeDoc = document.getElementsByTagName('iframe')[0].contentDocument;
+iframeDoc.designMode='on';
+var node1 = document.createElement('p');
+node1.innerHTML="<b>1122<i>wewe</i></b>";
+var node = document.createElement('div');
+node.innerHTML="<b>1122<i>wewe</i></b>";
+
+document.getElementsByTagName('iframe')[0].contentWindow.document.body.appendChild(node1);
+document.getElementsByTagName('iframe')[0].contentWindow.document.body.appendChild(node);
+node.contentEditable=false;
+    var inp = document.getElementsByTagName('input')[0];
+node.onsele
+</script>
+</body>
+</html>

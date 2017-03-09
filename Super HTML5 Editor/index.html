@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super HTML5 Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4qXTGvclMqTZXkLsU3twnMA7"></script>
+    <script src="app.js"></script>
+</head>
+<body class="browser-view">
+    <header>
+        <h1>Super HTML5 Editor</h1>
+        <!--文件浏览器视图标记应该放置在这里-->
+        <section id="list">
+            <h1>浏览文件</h1>
+            <details open id="filedrop">
+                <summary>创建文件</summary>
+                <form name="create">
+                    <div>
+                        <h2>创建一个空白文件</h2>
+                        <input type="text" name="name" placeholder="例如：index.html">
+                        <input type="submit" value="创建">
+                    </div>
+                </form>
+                <div class="spacer">或者</div>
+                <form name="import">
+                    <div>
+                        <h2>导入已有文件</h2>
+                        <input type="file" name="files" multiple>
+                        <input type="submit" value="导入">
+                    </div>
+                </form>
+                <div class="note">
+                    <strong>提示</strong>:你可以从计算机中拖拽文件到输入框完成文件导入。
+                </div>
+            </details>
+
+            <details open>
+                <summary>我的文件</summary>
+                <div class="note top">
+                    你现在有<span id="file_count">0</span>个文件:
+                </div>
+                <ul id="files"></ul>
+                <div class="note">
+                    <strong>提示</strong>:你可以从计算机中拖拽文件到输入框完成文件导入。
+                </div>
+            </details>
+        </section>
+        <!--文件编辑器视图标记应该放置在这里-->
+        <section id="editor">
+            <h1>编辑<span id="file_name"></span><a href="#list">返回文件视图</a></h1>
+            <div class="mode-toolbar">
+                <div class="left">
+                    <div>编辑模式:</div>
+                    <button id="edit_visual" class="split_left active">可视化</button>
+                    <button id="edit_html" class="split_right">HTML</button>
+                </div>
+                <div class="right">
+                    <div>编辑模式:</div>
+                    <button id="file_save" class="green">保存文件</button>
+                    <button id="file_preview">保存并预览</button>
+                </div>
+            </div>
+
+            <details open>
+                <summary>文件内容</summary>
+                <div id="file_contents">
+                    <div id="file_contents_visual">
+                        <div id="file_contents_visual_toolbar">
+                            <button data-command="bold"><strong>B</strong></button>
+                            <button data-command="italic"><strong>I</strong></button>
+                            <button data-command="underline"><strong>U</strong></button>
+                            <button data-command="strikethrough"><strong>S</strong></button>
+                            <button data-command="delete"><strong>删除</strong></button>
+                            <button data-command="insertUnorderedList"><strong>列表</strong></button>
+                            <button data-command="createLink"><strong>链接</strong></button>
+                            <button data-command="unlink"><strong>取消链接</strong></button>
+                            <button data-command="insertImage"><strong>图片</strong></button>
+                            <button data-command="insertMap"><strong>本地地图</strong></button>
+                        </div>
+                        <iframe id="file_contents_visual_editor">
+                        </iframe>
+                    </div>
+                    <div id="file_contents_html">
+                        <textarea id="file_contents_html_editor"></textarea>
+                    </div>
+                </div>
+            </details>
+        </section>
+    </header>
+</body>
+</html>
